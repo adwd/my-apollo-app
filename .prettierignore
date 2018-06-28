@@ -1,0 +1,11 @@
+node_modules
+lib
+coverage
+npm
+package.json
+dist
+*.snap
+package-lock.json
+tslint.json
+tsconfig*.json
+README.md

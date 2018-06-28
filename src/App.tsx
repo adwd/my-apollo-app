@@ -40,7 +40,9 @@ class App extends React.Component {
 
             return data.feed.map((data: any) => (
               <div key={data.postedBy.login}>
-                <p>{`${data.repository.owner.login}: ${data.repository.name}`}</p>
+                <p>{`${data.repository.owner.login}: ${
+                  data.repository.name
+                }`}</p>
               </div>
             ));
           }}
