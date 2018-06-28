@@ -4,35 +4,17 @@ import App from './App';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
-import ApolloClient from "apollo-boost";
-import gql from "graphql-tag";
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from 'react-apollo';
 
 const client = new ApolloClient({
   uri: "http://api.githunt.com/graphql"
 });
 
-client
-  .query({
-    query: gql`
-      {
-        feed(type: HOT, limit: 5) {
-          repository {
-            owner {
-              login
-            }
-            name
-          }
-          postedBy {
-            login
-          }
-        }
-      }
-    `
-  })
-  .then(result => console.log(result));
-
 ReactDOM.render(
-  <App />,
+  <ApolloProvider client={client}>
+    <App />
+  </ApolloProvider>,
   document.getElementById('root') as HTMLElement
 );
 registerServiceWorker();
