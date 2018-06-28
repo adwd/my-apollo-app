@@ -8,7 +8,7 @@ import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 
 const client = new ApolloClient({
-  uri: 'http://api.githunt.com/graphql',
+  uri: 'https://mpjk0plp9.lp.gql.zone/graphql',
 });
 
 ReactDOM.render(

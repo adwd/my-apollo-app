@@ -4,7 +4,10 @@ import './App.css';
 import logo from './logo.svg';
 
 import { Query } from 'react-apollo';
-import gql from 'graphql-tag';
+import { GetHero } from './queries';
+import { GetHeroQuery } from './__generated__/types';
+
+class HeroQuery extends Query<GetHeroQuery> {}
 
 class App extends React.Component {
   public render() {
@@ -17,36 +20,20 @@ class App extends React.Component {
         <p className="App-intro">
           To get started, edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <Query
-          query={gql`
-            {
-              feed(type: HOT, limit: 5) {
-                repository {
-                  owner {
-                    login
-                  }
-                  name
-                }
-                postedBy {
-                  login
-                }
-              }
-            }
-          `}
-        >
+        <HeroQuery query={GetHero}>
           {({ loading, error, data }) => {
             if (loading) return <p>Loading...</p>;
             if (error) return <p>Error :(</p>;
+            if (!data || !data.hero || !data.hero.friends)
+              return <div>no data</div>;
 
-            return data.feed.map((data: any) => (
-              <div key={data.postedBy.login}>
-                <p>{`${data.repository.owner.login}: ${
-                  data.repository.name
-                }`}</p>
+            return data.hero.friends.map(friend => (
+              <div key={friend!.name}>
+                <p>{`${friend!.name}(${friend!.appearsIn})`}</p>
               </div>
             ));
           }}
-        </Query>
+        </HeroQuery>
       </div>
     );
   }
