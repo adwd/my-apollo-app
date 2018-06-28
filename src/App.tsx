@@ -7,8 +7,6 @@ import { Query } from 'react-apollo';
 import { GetHero } from './queries';
 import { GetHeroQuery } from './__generated__/types';
 
-class HeroQuery extends Query<GetHeroQuery> {}
-
 class App extends React.Component {
   public render() {
     return (
@@ -20,7 +18,7 @@ class App extends React.Component {
         <p className="App-intro">
           To get started, edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <HeroQuery query={GetHero}>
+        <Query<GetHeroQuery> query={GetHero}>
           {({ loading, error, data }) => {
             if (loading) return <p>Loading...</p>;
             if (error) return <p>Error :(</p>;
@@ -33,7 +31,7 @@ class App extends React.Component {
               </div>
             ));
           }}
-        </HeroQuery>
+        </Query>
       </div>
     );
   }
