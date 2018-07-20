@@ -4,7 +4,7 @@ import './App.css';
 import logo from './logo.svg';
 
 import { Query } from 'react-apollo';
-import { GetHero } from './queries';
+import { GetHero } from './queries/getHero';
 import { GetHeroQuery } from './__generated__/types';
 
 class App extends React.Component {

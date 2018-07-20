@@ -19,7 +19,7 @@
     "eject": "react-scripts-ts eject",
     "prettier": "prettier --write \"./**/*.{js,jsx,ts*,md,graphql,json}\"",
     "schema": "apollo-codegen introspect-schema https://mpjk0plp9.lp.gql.zone/graphql --output ./src/schema.json",
-    "types": "apollo-codegen generate ./src/**/queries.ts --addTypename --schema ./src/schema.json --target typescript --output ./src/__generated__/types.ts"
+    "types": "apollo-codegen generate ./src/queries/*.ts --addTypename --schema ./src/schema.json --target typescript --output ./src/__generated__/types.ts"
   },
   "devDependencies": {
     "@types/jest": "^23.1.3",
