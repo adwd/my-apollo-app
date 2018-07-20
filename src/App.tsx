@@ -6,6 +6,7 @@ import logo from './logo.svg';
 import { Query } from 'react-apollo';
 import { GetHero } from './queries/getHero';
 import { GetHeroQuery } from './__generated__/types';
+import { Friend } from './Friend';
 
 class App extends React.Component {
   public render() {
@@ -26,9 +27,7 @@ class App extends React.Component {
               return <div>no data</div>;
 
             return data.hero.friends.map(friend => (
-              <div key={friend!.name}>
-                <p>{`${friend!.name}(${friend!.appearsIn})`}</p>
-              </div>
+              <Friend friend={friend!} key={friend!.name} />
             ));
           }}
         </Query>

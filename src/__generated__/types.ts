@@ -36,6 +36,10 @@ export interface GetHeroQuery {
                   | {
                       __typename: 'Human';
                       /**
+                       * The ID of the character
+                       */
+                      id: string;
+                      /**
                        * The name of the character
                        */
                       name: string;
@@ -46,6 +50,10 @@ export interface GetHeroQuery {
                     }
                   | {
                       __typename: 'Droid';
+                      /**
+                       * The ID of the character
+                       */
+                      id: string;
                       /**
                        * The name of the character
                        */
@@ -72,6 +80,10 @@ export interface GetHeroQuery {
                   | {
                       __typename: 'Human';
                       /**
+                       * The ID of the character
+                       */
+                      id: string;
+                      /**
                        * The name of the character
                        */
                       name: string;
@@ -82,6 +94,10 @@ export interface GetHeroQuery {
                     }
                   | {
                       __typename: 'Droid';
+                      /**
+                       * The ID of the character
+                       */
+                      id: string;
                       /**
                        * The name of the character
                        */
@@ -96,3 +112,35 @@ export interface GetHeroQuery {
           })
     | null;
 }
+
+export type friendFragment =
+  | {
+      __typename: 'Human';
+      /**
+       * The ID of the character
+       */
+      id: string;
+      /**
+       * The name of the character
+       */
+      name: string;
+      /**
+       * The movies this character appears in
+       */
+      appearsIn: Array<Episode | null>;
+    }
+  | {
+      __typename: 'Droid';
+      /**
+       * The ID of the character
+       */
+      id: string;
+      /**
+       * The name of the character
+       */
+      name: string;
+      /**
+       * The movies this character appears in
+       */
+      appearsIn: Array<Episode | null>;
+    };
