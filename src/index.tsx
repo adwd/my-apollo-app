@@ -6,8 +6,13 @@ import registerServiceWorker from './registerServiceWorker';
 
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import { fragmentMatcher } from './__generated__/fragmentTypes';
+
+const cache = new InMemoryCache({ fragmentMatcher });
 
 const client = new ApolloClient({
+  cache,
   uri: 'https://mpjk0plp9.lp.gql.zone/graphql',
 });
 
