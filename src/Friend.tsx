@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { friendFragment } from './__generated__/types';
+import { FriendFragment } from './__generated__/types';
 
-export class Friend extends React.Component<{ friend: friendFragment }> {
-  render () {
+export class Friend extends React.Component<{ friend: FriendFragment }> {
+  render() {
     const { name, appearsIn } = this.props.friend;
     return (
       <div>

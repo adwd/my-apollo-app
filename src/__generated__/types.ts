@@ -113,7 +113,7 @@ export interface GetHeroQuery {
     | null;
 }
 
-export type friendFragment =
+export type FriendFragment =
   | {
       __typename: 'Human';
       /**

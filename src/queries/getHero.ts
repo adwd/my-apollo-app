@@ -6,7 +6,7 @@ export const GetHero = gql`
     hero {
       name
       friends {
-        ...friend
+        ...Friend
       }
     }
   }
