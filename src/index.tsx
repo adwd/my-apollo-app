@@ -14,6 +14,13 @@ const cache = new InMemoryCache({ fragmentMatcher });
 const client = new ApolloClient({
   cache,
   uri: 'https://us1.prisma.sh/masahiro-nishida-fb20bf/todo-app/dev',
+  // https://www.apollographql.com/docs/react/essentials/local-state.html#setup
+  clientState: {
+    defaults: {
+      visibilityFilter: 'All',
+    },
+    resolvers: {},
+  },
 });
 
 ReactDOM.render(
