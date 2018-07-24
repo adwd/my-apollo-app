@@ -5,17 +5,8 @@ const json = {
     types: [
       {
         kind: 'INTERFACE',
-        name: 'Character',
-        possibleTypes: [{ name: 'Human' }, { name: 'Droid' }],
-      },
-      {
-        kind: 'UNION',
-        name: 'SearchResult',
-        possibleTypes: [
-          { name: 'Human' },
-          { name: 'Droid' },
-          { name: 'Starship' },
-        ],
+        name: 'Node',
+        possibleTypes: [{ name: 'Todo' }, { name: 'User' }],
       },
     ],
   },

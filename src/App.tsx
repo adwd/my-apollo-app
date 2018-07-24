@@ -4,9 +4,9 @@ import './App.css';
 import logo from './logo.svg';
 
 import { Query } from 'react-apollo';
-import { GetHero } from './queries/getHero';
-import { GetHeroQuery } from './__generated__/types';
-import { Friend } from './Friend';
+import { GetTodosQuery } from './queries/getTodos';
+import { GetTodos } from './__generated__/types';
+import { Todo } from './Todo';
 
 class App extends React.Component {
   public render() {
@@ -19,15 +19,14 @@ class App extends React.Component {
         <p className="App-intro">
           To get started, edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <Query<GetHeroQuery> query={GetHero}>
+        <Query<GetTodos> query={GetTodosQuery}>
           {({ loading, error, data }) => {
             if (loading) return <p>Loading...</p>;
             if (error) return <p>Error :(</p>;
-            if (!data || !data.hero || !data.hero.friends)
-              return <div>no data</div>;
+            if (!data) return <div>no data</div>;
 
-            return data.hero.friends.map(friend => (
-              <Friend friend={friend!} key={friend!.name} />
+            return data.todoes.map(todo => (
+              <Todo todo={todo!} key={todo!.id} />
             ));
           }}
         </Query>

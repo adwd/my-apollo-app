@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 const fs = require('fs');
 
-const host = 'https://mpjk0plp9.lp.gql.zone/graphql';
+const host = 'https://us1.prisma.sh/masahiro-nishida-fb20bf/todo-app/dev';
 
 fetch(host, {
   method: 'POST',

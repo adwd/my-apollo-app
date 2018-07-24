@@ -13,7 +13,7 @@ const cache = new InMemoryCache({ fragmentMatcher });
 
 const client = new ApolloClient({
   cache,
-  uri: 'https://mpjk0plp9.lp.gql.zone/graphql',
+  uri: 'https://us1.prisma.sh/masahiro-nishida-fb20bf/todo-app/dev',
 });
 
 ReactDOM.render(
