@@ -2,28 +2,51 @@
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL query operation: GetTodos
+// GraphQL mutation operation: addTodo
 // ====================================================
 
-export interface GetTodos_todoes {
+export interface addTodo_createTodo {
   __typename: 'Todo';
   id: string;
   text: string;
   done: boolean;
 }
 
-export interface GetTodos {
-  todoes: (GetTodos_todoes | null)[];
+export interface addTodo {
+  createTodo: addTodo_createTodo;
+}
+
+export interface addTodoVariables {
+  text: string;
+  done: boolean;
 }
 
 /* tslint:disable */
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL fragment: TodoFragment
+// GraphQL query operation: getTodos
 // ====================================================
 
-export interface TodoFragment {
+export interface getTodos_todoes {
+  __typename: 'Todo';
+  id: string;
+  text: string;
+  done: boolean;
+}
+
+export interface getTodos {
+  todoes: (getTodos_todoes | null)[];
+}
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL fragment: todoFragment
+// ====================================================
+
+export interface todoFragment {
   __typename: 'Todo';
   id: string;
   text: string;

@@ -1,7 +1,7 @@
 import gql from 'graphql-tag';
 
 export const TodoFragment = gql`
-  fragment TodoFragment on Todo {
+  fragment todoFragment on Todo {
     id
     text
     done

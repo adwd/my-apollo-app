@@ -4,9 +4,10 @@ import './App.css';
 import logo from './logo.svg';
 
 import { Query } from 'react-apollo';
-import { GetTodosQuery } from './queries/getTodos';
-import { GetTodos } from './__generated__/types';
-import { Todo } from './Todo';
+import { GetTodosQuery } from './queries/getTodos.query';
+import { getTodos } from './__generated__/types';
+import { Todo } from './components/Todo';
+import { AddTodo } from './components/AddTodo';
 
 class App extends React.Component {
   public render() {
@@ -19,7 +20,7 @@ class App extends React.Component {
         <p className="App-intro">
           To get started, edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <Query<GetTodos> query={GetTodosQuery}>
+        <Query<getTodos> query={GetTodosQuery}>
           {({ loading, error, data }) => {
             if (loading) return <p>Loading...</p>;
             if (error) return <p>Error :(</p>;
@@ -30,6 +31,7 @@ class App extends React.Component {
             ));
           }}
         </Query>
+        <AddTodo />
       </div>
     );
   }
